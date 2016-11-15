@@ -159,7 +159,8 @@ project(":code/solovev-dmitriy").name = "solovev-dmitriy-Model"
 include "code/tarasenko-alex"
 project(":code/tarasenko-alex").name = "tarasenko-alex"
 // Тропичева Дарья
-
+include "code/Tropicheva-Darya"
+project(":code/Tropicheva-Darya").name = "Tropicheva-Darya"
 // Федосов Александр
 include "code/Fedosov-Alexander"
 project(":code/Fedosov-Alexander").name = "Fedosov-Alexander-Model"
