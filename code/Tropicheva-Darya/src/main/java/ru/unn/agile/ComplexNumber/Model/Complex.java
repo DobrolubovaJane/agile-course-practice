@@ -3,20 +3,20 @@ package ru.unn.agile.ComplexNumber.Model;
 /**
  * Created by Дарья on 07.11.2016.
  */
-public class ComplexNumber {
+public class Complex {
     private final float real;
     private final float imaginary;
     private static final int HASHCODE = 31;
     private static final float ZERO = 0.00001f;
 
-    public ComplexNumber(final float re, final float im) {
+    public Complex(final float re, final float im) {
         this.real = re;
         this.imaginary = im;
     }
 
     @Override
     public String toString() {
-        return "ComplexNumber{" + "" + real + " + i" + imaginary + '}';
+        return "Complex{" + "" + real + " + i" + imaginary + '}';
     }
 
     public float getReal() {
@@ -32,7 +32,7 @@ public class ComplexNumber {
             return false;
         }
 
-        ComplexNumber that = (ComplexNumber) o;
+        Complex that = (Complex) o;
 
         if (Float.compare(that.real, real) != 0) {
             return false;
