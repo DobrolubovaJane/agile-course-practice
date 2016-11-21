@@ -23,6 +23,7 @@ repositories {
 
 dependencies {
     compile 'net.sourceforge.pmd:pmd:5.3.0'
+    compile 'junit:junit:4.12'
 }
 
 cpd {

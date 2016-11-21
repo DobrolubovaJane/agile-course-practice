@@ -105,8 +105,12 @@ project(":code/larin-anton").name = "larin-anton-Model"
 // Луковников Илья
 // Максимов Максим
 // Малойкина Елена
-include "code/maloykina-elena"
-project(":code/maloykina-elena").name = "maloykina-elena-Model"
+include "code/notation-converter/maloykina-elena"
+project(":code/notation-converter/maloykina-elena").name = "maloykina-elena-Model"
+include "code/notation-converter/View"
+project(":code/notation-converter/View").name = "notation-converter-View"
+include "code/notation-converter/ViewModel"
+project(":code/notation-converter/ViewModel").name = "notation-converter-ViewModel"
 // Матвеева Светлана
 // Метелёв Евгений
 // Михейкина Алёна
