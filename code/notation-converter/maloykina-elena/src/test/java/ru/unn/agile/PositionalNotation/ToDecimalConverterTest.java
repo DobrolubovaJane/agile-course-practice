@@ -5,6 +5,12 @@ import static org.junit.Assert.*;
 
 public class ToDecimalConverterTest {
     @Test
+    public void convert5FromDecimalToDecimal() {
+        String decimal = "5";
+        int decimal2 = ToDecimalConverter.convertDecimalToDecimal(decimal);
+        assertEquals(5, decimal2);
+    }
+    @Test
     public void convert0FromBinaryToDecimal() {
         String binary = "0";
         int decimal = ToDecimalConverter.convertBinaryToDecimal(binary);

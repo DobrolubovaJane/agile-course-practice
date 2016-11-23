@@ -54,4 +54,9 @@ public class FromDecimalConverterTest {
         String hex = FromDecimalConverter.convertToHex(59);
         assertEquals("3b", hex);
     }
+    @Test
+    public void convert59ToDecimal() {
+        String decimal = FromDecimalConverter.convertToDecimal(59);
+        assertEquals("59", decimal);
+    }
 }

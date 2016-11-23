@@ -1,10 +1,10 @@
 package ru.unn.agile.PositionalNotation.viewmodel;
 
 public enum Notation {
-    BINARY("Двоичная система"),
-    DECIMAL("Десятичная"),
-    OCTAL("Восьмеричная"),
-    HEXADECIMAL("Шестнадцатиричная");
+    BINARY("binary"),
+    DECIMAL("decimal"),
+    OCTAL("octal"),
+    HEX("hex");
 
     private final String name;
     Notation(final String name) {

@@ -40,4 +40,8 @@ public final class FromDecimalConverter {
             return result;
         }
     }
+    public static String convertToDecimal(final int number) {
+        Validator.checkDecimalValue(number);
+        return String.valueOf(number);
+    }
 }
