@@ -7,12 +7,9 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import ru.unn.agile.PositionalNotation.Converter;
-import ru.unn.agile.PositionalNotation.Validator;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by Jane on 21.11.2016.
@@ -40,7 +37,7 @@ public class ViewModel {
 
         BooleanBinding couldCalculate = new BooleanBinding() {
             {
-                super.bind(number, status);
+                super.bind(number, result);
             }
             @Override
             protected boolean computeValue() {
@@ -53,7 +50,6 @@ public class ViewModel {
         final List<StringProperty> fields = new ArrayList<StringProperty>() { {
             add(number);
             add(result);
-            add(status);
         } };
 
         for (StringProperty field : fields) {
@@ -67,7 +63,8 @@ public class ViewModel {
         if (converterDisabled.get()) {
             return;
         }
-        result.set(Converter.convert(number.get(), fromNotation.get().name(), toNotation.get().name()));
+        result.set(Converter.convert(number.get(),
+                fromNotation.get().name(), toNotation.get().name()));
         status.set(Status.SUCCESS.toString());
     }
 
@@ -109,28 +106,25 @@ public class ViewModel {
     private Status getInputStatus() {
         Status inputStatus = Status.READY;
         String n = number.get();
-        if (number.get().isEmpty() ) {
+        if (number.get().isEmpty()) {
             inputStatus = Status.WAIT;
         }
-        if (!number.get().isEmpty() && Notation.DECIMAL.equals(fromNotation.get()) &&
-                    !n.matches("[1-9]+[0-9]*")) {
+        if (!number.get().isEmpty() && Notation.DECIMAL.equals(fromNotation.get())
+                && !n.matches("[1-9]+[0-9]*")) {
             inputStatus = Status.ERROR;
         }
-
-        if(!number.get().isEmpty() && Notation.BINARY.equals(fromNotation.get())
+        if (!number.get().isEmpty() && Notation.BINARY.equals(fromNotation.get())
                 && !n.matches("1+[01]*")) {
             inputStatus = Status.ERROR;
         }
-        if(!number.get().isEmpty() && Notation.OCTAL.equals(fromNotation.get())
+        if (!number.get().isEmpty() && Notation.OCTAL.equals(fromNotation.get())
                 && !n.matches("[1-7]+[0-7]*")) {
             inputStatus = Status.ERROR;
         }
-        if(!number.get().isEmpty() && Notation.HEX.equals(fromNotation.get())
+        if (!number.get().isEmpty() && Notation.HEX.equals(fromNotation.get())
                 && !n.matches("[1-9a-fA-F]+[0-9a-fA-F]*")) {
             inputStatus = Status.ERROR;
         }
-
-
         return inputStatus;
     }
 
@@ -147,7 +141,7 @@ public class ViewModel {
 enum Status {
     READY("Enter the button!"),
     WAIT("Wait a number!"),
-    ERROR("This is not a number!"),
+    ERROR("This is bad format!"),
     SUCCESS("Success!");
 
     private final String name;

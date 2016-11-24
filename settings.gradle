@@ -105,8 +105,8 @@ project(":code/larin-anton").name = "larin-anton-Model"
 // Луковников Илья
 // Максимов Максим
 // Малойкина Елена
-include "code/notation-converter/maloykina-elena"
-project(":code/notation-converter/maloykina-elena").name = "maloykina-elena-Model"
+include "code/notation-converter/Model"
+project(":code/notation-converter/Model").name = "notation-converter-Model"
 include "code/notation-converter/View"
 project(":code/notation-converter/View").name = "notation-converter-View"
 include "code/notation-converter/ViewModel"

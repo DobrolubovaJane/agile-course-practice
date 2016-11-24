@@ -3,10 +3,6 @@ package ru.unn.agile.PositionalNotation.viewmodel;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import ru.unn.agile.PositionalNotation.Converter;
-import ru.unn.agile.PositionalNotation.Notations;
-
-import javax.swing.text.View;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -27,13 +23,6 @@ public class ViewModelTests {
     public void tearDown() {
         viewModel = null;
     }
-//
-//    @Test
-//    public void canReportNotNumberValue() {
-//        viewModel.numberProperty().set("a");
-//        assertEquals(Status.ERROR.toString(), viewModel.statusProperty().get());
-//    }
-
     @Test
     public void canSetDefaultValues() {
         assertEquals("", viewModel.numberProperty().get());
@@ -42,7 +31,6 @@ public class ViewModelTests {
         assertEquals(Notation.DECIMAL, viewModel.toNotationProperty().get());
         assertEquals(Status.WAIT.toString(), viewModel.statusProperty().get());
     }
-
     @Test
     public void calculateButtonIsDisabledIfNumberIsNull() {
         viewModel.numberProperty().set("");
@@ -74,7 +62,6 @@ public class ViewModelTests {
          viewModel.convert();
          assertEquals("33", viewModel.resultProperty().get());
      }
-
     @Test
     public void statusIsWaitingWhenConvertWithEmptyNumber() {
         viewModel.convert();

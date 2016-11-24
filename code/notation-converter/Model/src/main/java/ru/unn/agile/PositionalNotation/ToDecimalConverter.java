@@ -54,7 +54,7 @@ public final class ToDecimalConverter {
         return result;
     }
 
-    public static int convertDecimalToDecimal(String number) {
+    public static int convertDecimalToDecimal(final String number) {
         Validator.checkValueToNull(number);
         Validator.checkValueToEmpty(number);
         return Integer.valueOf(number);
